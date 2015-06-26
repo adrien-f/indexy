@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
+    <title>{% block title %}{% endblock %}</title>
+{#    <meta name="csrf-token" content="{{ csrf_token() }}">#}
+    {% block js %}
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/libs.min.js') }}"></script>
+    {% endblock %}
+
+    {% block css %}
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Open Sans:400,300,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        {% include "_layouts/nav.html" %}
+        {% include "_layouts/messages.html" %}
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    {% endblock %}
+    <script>
+        /*var csrftoken = $('meta[name=csrf-token]').attr('content')
+
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type)) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken)
+                }
+            }
+        })*/
+    </script>
+</body>
+</html>

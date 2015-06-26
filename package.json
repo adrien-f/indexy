@@ -1,0 +1,24 @@
+{
+  "name": "indexy",
+  "version": "1.0.0",
+  "description": "Indexy",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bower-files": "^3.7.0",
+    "browser-sync": "^2.7.3",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-less": "^3.0.3",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-template": "^3.0.0",
+    "gulp-typescript": "^2.7.5",
+    "gulp-uglify": "^1.2.0",
+    "js-yaml": "^3.3.1"
+  }
+}

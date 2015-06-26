@@ -1,0 +1,16 @@
+{
+  "name": "Indexy",
+  "version": "0.0.1",
+  "authors": [
+    "adrien-f <adrien.fillon@gmail.com>"
+  ],
+  "description": "Indexy",
+  "license": "MIT",
+  "private": true,
+  "ignore": [],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "jquery": "~2.1.1",
+    "typeahead.js": "~0.11.1"
+  }
+}

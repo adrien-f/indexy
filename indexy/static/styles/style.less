@@ -1,0 +1,249 @@
+@import "variables";
+//@import "meta";
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.navbar.navbar-default {
+  border-radius: 0;
+  border: 0;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+h1, h3, h3, h4, h5, h6 {
+  font-weight: 300 !important;
+}
+
+form.form-inline {
+  display: inline;
+}
+
+body {
+  padding-bottom: 20px;
+}
+
+.table.collapse.in {
+  display: table;
+}
+
+.navbar-no-margin {
+  margin-bottom: 0 !important;
+}
+
+.messages-margin {
+  margin-top: 20px;
+}
+
+.jumbotron h1 {
+  margin-top: 0;
+}
+
+.btn-header {
+  padding: 8px 16px !important;
+}
+
+.spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner.spinner-inline {
+  margin: 0;
+  height: 10px;
+  text-align: left;
+  display: inline-block;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+/*
+ * typehead.js-bootstrap3.less
+ * @version 0.2.3
+ * https://github.com/hyspace/typeahead.js-bootstrap3.less
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+//custom mixin for .form-control-validation
+.typeahead-form-control(@border-color: #ccc;) {
+  border-color: @border-color;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+  &:focus {
+    border-color: darken(@border-color, 10%);
+    @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@border-color, 20%);
+    .box-shadow(@shadow);
+  }
+}
+
+//main styles for control
+.tt-input,
+.tt-hint {
+  .twitter-typeahead &{
+    //validation states
+    .has-warning &{
+      .typeahead-form-control(@state-warning-text);
+    }
+    .has-error &{
+      .typeahead-form-control(@state-danger-text);
+    }
+    .has-success &{
+      .typeahead-form-control(@state-success-text);
+    }
+  }
+
+  //border
+  .input-group .twitter-typeahead:first-child &{
+    .border-left-radius(@border-radius-base);
+    width: 100%;
+  }
+  .input-group .twitter-typeahead:last-child &{
+    .border-right-radius(@border-radius-base);
+    width: 100%;
+  }
+
+  //sizing - small:size and border
+  .input-group.input-group-sm .twitter-typeahead &{
+    .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+  }
+  .input-group.input-group-sm .twitter-typeahead:not(:first-child):not(:last-child) &{
+    border-radius: 0;
+  }
+  .input-group.input-group-sm .twitter-typeahead:first-child &{
+    .border-left-radius(@border-radius-small);
+    .border-right-radius(0);
+  }
+  .input-group.input-group-sm .twitter-typeahead:last-child &{
+    .border-left-radius(0);
+    .border-right-radius(@border-radius-small);
+  }
+
+  //sizing - large:size and border
+  .input-group.input-group-lg .twitter-typeahead &{
+    .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  }
+  .input-group.input-group-lg .twitter-typeahead:not(:first-child):not(:last-child) &{
+    border-radius: 0;
+  }
+  .input-group.input-group-lg .twitter-typeahead:first-child &{
+    .border-left-radius(@border-radius-large);
+    .border-right-radius(0);
+  }
+  .input-group.input-group-lg .twitter-typeahead:last-child &{
+    .border-left-radius(0);
+    .border-right-radius(@border-radius-large);
+  }
+}
+
+//for wrapper
+.twitter-typeahead {
+  width: 100%;
+  float: left;
+  .input-group &{
+    //overwrite `display:inline-block` style
+    display: table-cell!important;
+  }
+}
+
+//particular style for each other
+.twitter-typeahead .tt-hint {
+  color: @text-muted;//color - hint
+}
+.twitter-typeahead .tt-input {
+  z-index: 2;
+  //disabled status
+  //overwrite inline styles of .tt-query
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    //overwirte inline style
+    background-color: @input-bg-disabled!important;
+  }
+}
+
+//dropdown styles
+.tt-dropdown-menu, .tt-menu {
+  //dropdown menu
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @zindex-dropdown;
+  min-width: 160px;
+  width: 100%;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: @font-size-base;
+  background-color: @dropdown-bg;
+  border: 1px solid @dropdown-fallback-border;
+  border: 1px solid @dropdown-border;
+  border-radius: @border-radius-base;
+  .box-shadow(0 6px 12px rgba(0,0,0,.175));
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+
+  .tt-suggestion {
+    //item
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: @line-height-base;
+    color: @dropdown-link-color;
+
+    &.tt-cursor, &:hover {
+      //item selected
+      cursor: pointer;
+      text-decoration: none;
+      outline: 0;
+      background-color: @dropdown-link-hover-bg;
+      color: @dropdown-link-hover-color;
+      a {
+        //link in item selected
+        color: @dropdown-link-hover-color;
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

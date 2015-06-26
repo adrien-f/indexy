@@ -1,0 +1,17 @@
+{% extends "_layouts/base.html" %}
+{% block title %}Indexy{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Sharing {{ file.name }}</h1>
+            <hr/>
+        </div>
+        <div class="col-md-12">
+            <div class="well">
+                <p>Here's your link to share this file with anyone, it will be valid for 24 hours (configurable in the settings of Indexy):</p>
+                <input type="text" class="form-control" readonly value="{{ url_for('TreeView:share_view', code=share_code) }}"/>
+            </div>
+        </div>
+    </div>
+{% endblock %}
