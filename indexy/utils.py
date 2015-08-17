@@ -51,4 +51,3 @@ def get_icon(file):
 
 def safe_parents(path):
     return walker.safe_parents(path)
-

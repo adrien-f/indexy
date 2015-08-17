@@ -14,6 +14,9 @@ class WalkerElement(object):
     def is_video_media(self):
         return self.suffix in ['.mkv', '.avi', '.mp4']
 
+    def relative(self):
+        return self.relative_to(walker.root)
+
     def thumbnail(self):
         return None
 

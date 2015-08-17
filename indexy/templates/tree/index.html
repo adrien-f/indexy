@@ -37,10 +37,10 @@
                             <li><i class="fa fa-fw fa-clock-o"></i> {{ file.stat().st_mtime|format_datetime }} ({{ file.stat().st_mtime|humanize }})</li>
                         </ul>
                         <div class="btn-group">
-                            <a href="{{ url_for('TreeView:download', file=file.path.__str__()) }}" class="btn btn-xs btn-primary"><i class="fa fa-fw fa-download"></i> Download</a>
-                            <a href="{{ url_for('TreeView:view', file=file.path.__str__()) }}" class="btn btn-xs btn-peter"><i class="fa fa-fw fa-cloud-download"></i> View</a>
+                            <a href="{{ url_for('TreeView:download', file=file.relative()) }}" class="btn btn-xs btn-primary"><i class="fa fa-fw fa-download"></i> Download</a>
+                            <a href="{{ url_for('TreeView:view', file=file.relative()) }}" class="btn btn-xs btn-peter"><i class="fa fa-fw fa-cloud-download"></i> View</a>
                             <a href="#" class="btn btn-xs btn-nephritis"><i class="fa fa-fw fa-wifi"></i> Cast</a>
-                            <a data-toggle="modal" data-target="#share-modal" href="{{ url_for('TreeView:share', file=file.path.__str__(), modal='true') }}" class="btn btn-xs btn-success"><i class="fa fa-fw fa-share"></i> Share</a>
+                            <a data-toggle="modal" data-target="#share-modal" href="{{ url_for('TreeView:share', file=file.relative(), modal='true') }}" class="btn btn-xs btn-success"><i class="fa fa-fw fa-share"></i> Share</a>
 {#                            <a href="#" class="btn btn-xs btn-danger"><i class="fa fa-fw fa-trash-o"></i> Delete</a>#}
                         </div>
                     </li>

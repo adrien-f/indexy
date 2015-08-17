@@ -1,0 +1,15 @@
+Flask
+Flask-Classy
+Flask-Cors
+Flask-Redis
+Flask-Script
+arrow
+bleach
+fuzzywuzzy
+guessit
+html5lib
+requests
+six
+pyyaml
+markdown
+python-Levenshtein

@@ -37,9 +37,9 @@ def create_app(config_file=None, config_object=None):
     from indexy.walker import walker
     walker.init_app(app)
 
-    # from indexy.indexer import indexer
-    # indexer.init_app(app)
-    # indexer.build_index()
+    from indexy.indexer import indexer
+    indexer.init_app(app)
+    indexer.build_index()
 
     from indexy.organizer import organizer
     organizer.init_app(app)
